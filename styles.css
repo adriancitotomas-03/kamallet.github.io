@@ -3,6 +3,7 @@ body {
      background-color: #1a1a1a;
      margin: 0;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -25,6 +26,25 @@ body::before {
     }
 }
 
+ul {
+    list-style-type:circle;
+    list-style-position:outside;
+    border: solid #580AFF;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: left;
+    background-color:#580AFF;
+    color:#FFD20A;
+    border-radius: 10px;
+}
+
+li {
+    text-align:left;
+    width: fit-content;
+}
+
 p {
     color:  #0AFF58; 
     text-align: center;
@@ -41,7 +61,7 @@ a {
     border-radius: 20px;
 }
 
-.btn {
+.btn, .btn2 {
     display: inline-block;
     background-color:violet;
     color: white;
@@ -54,16 +74,6 @@ a {
 .btn:hover {
     background-color: darkblue;
     transform: scale(1.15);
-}
-
-.btn2 {
-    display: inline-block;
-    color: white;
-    background-color: violet;
-    padding: 10px 24px;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    margin: 30px 20px
 }
 
 .btn2:hover {
@@ -114,11 +124,10 @@ blockquote {
 }
 
 img {
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto;
+    display:block; 
+    margin: auto;
     animation: zoomPulsante 3s ease-in-out infinite;
-    width: 50%;
+    max-width: 60%;
 }
 
 .presentacion {
@@ -131,14 +140,23 @@ img {
 .hollowknight, 
 .dragonball, 
 .lunadepluton {
-    margin: 100px; text-align: center;
-    opacity: 0;
+    margin: 100px;
+    text-align: center;
     position: relative;
-    top: 20px;
+    transition: opacity 1s, top 1s;
+}
+
+.invisible {
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 .visible {
     opacity: 1;
-    top: 0;
-    transition: opacity 1s, top 1s;
+    transform: translateY(0);
+}
+
+.saliendo {
+    opacity: 0;
+    transform: translateY(-40px);
 }
